@@ -5,6 +5,9 @@ import org.openqa.selenium.NoSuchElementException
 
 class Utils {
     companion object {
+
+        // TODO: Refactor it
+
         fun elementExists(element: AndroidElement): Boolean {
             var exist: Boolean = true
             try {

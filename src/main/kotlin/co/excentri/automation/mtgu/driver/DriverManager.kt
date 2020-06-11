@@ -25,7 +25,7 @@ open class DriverManager {
             dc.setCapability("autoAcceptAlerts", "true")
 
             driver = AndroidDriver<WebElement>(URL(url), dc)
-            driver.manage().timeouts().implicitlyWait(10, SECONDS)
+            driver.manage().timeouts().implicitlyWait(2, SECONDS)
 
             return driver
         }
