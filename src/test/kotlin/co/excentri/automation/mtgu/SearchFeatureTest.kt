@@ -37,9 +37,13 @@ class SearchFeatureTest : DriverManager() {
 
         card.name(cardName).search()
 
+        assertThat(cardActions.baseCardSearchSection.cardNameElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardNameElement.text).isEqualTo(cardName)
+        assertThat(cardActions.baseCardSearchSection.cardManaCostElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardManaCostElement.text).isEqualTo(cardManaCost)
+        assertThat(cardActions.baseCardSearchSection.cardTypesElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardTypesElement.text).isEqualTo(cardTypes)
+        assertThat(cardActions.baseCardSearchSection.cardTextElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardTextElement.text).isNotNull().isNotBlank().isNotEmpty()
     }
 
@@ -55,9 +59,13 @@ class SearchFeatureTest : DriverManager() {
 
         card.name(cardName).search()
 
+        assertThat(cardActions.baseCardSearchSection.cardNameElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardNameElement.text).isEqualTo(cardName)
+        assertThat(cardActions.baseCardSearchSection.cardManaCostElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardManaCostElement.text).isEqualTo(cardManaCost)
+        assertThat(cardActions.baseCardSearchSection.cardTypesElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardTypesElement.text).isEqualTo(cardTypes)
+        assertThat(cardActions.baseCardSearchSection.cardTextElement.isDisplayed).isTrue()
         assertThat(cardActions.baseCardSearchSection.cardTextElement.text).isNotNull().isNotBlank().isNotEmpty()
     }
 }

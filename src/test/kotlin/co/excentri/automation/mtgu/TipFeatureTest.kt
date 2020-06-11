@@ -16,9 +16,9 @@ class TipFeatureTest : DriverManager() {
         assertThat(tipActions.tipSection.dialogTitleElement.isDisplayed).isTrue()
         assertThat(tipActions.tipSection.dialogTitleElement.text).isEqualTo("Tips")
         assertThat(tipActions.tipSection.tipTitleElement.isDisplayed).isTrue()
-        assertThat(tipActions.tipSection.tipTitleElement.text).isNotNull().isNotBlank()
+        assertThat(tipActions.tipSection.tipTitleElement.text).isNotNull().isNotBlank().isNotEmpty()
         assertThat(tipActions.tipSection.tipDescriptionElement.isDisplayed).isTrue()
-        assertThat(tipActions.tipSection.tipDescriptionElement.text).isNotNull().isNotBlank()
+        assertThat(tipActions.tipSection.tipDescriptionElement.text).isNotNull().isNotBlank().isNotEmpty()
         assertThat(tipActions.tipSection.btnPositiveElement.isDisplayed).isTrue()
         assertThat(tipActions.tipSection.btnPositiveElement.isEnabled).isTrue()
     }
