@@ -1,22 +1,28 @@
 package co.excentri.automation.mtgu.utils
 
+import io.appium.java_client.android.AndroidDriver
 import io.appium.java_client.android.AndroidElement
 import org.openqa.selenium.NoSuchElementException
+import org.openqa.selenium.StaleElementReferenceException
+import org.openqa.selenium.support.ui.ExpectedCondition
+import org.openqa.selenium.support.ui.WebDriverWait
 
-class Utils {
-    companion object {
 
-        // TODO: Refactor it
+class Utils(val driver: AndroidDriver<*>) {
 
-        fun elementExists(element: AndroidElement): Boolean {
-            var exist: Boolean = true
+    private fun invisibilityOfElementLocated(element: AndroidElement): ExpectedCondition<Boolean> {
+        return ExpectedCondition {
             try {
-                element.isDisplayed
+                !element.isDisplayed
             } catch (e: NoSuchElementException) {
-                exist = false
-            } finally {
-                return exist
+                true
+            } catch (e: StaleElementReferenceException) {
+                true
             }
         }
+    }
+
+    fun elementExists(element: AndroidElement): Boolean {
+        return !WebDriverWait(driver, 2).until(invisibilityOfElementLocated(element))
     }
 }
